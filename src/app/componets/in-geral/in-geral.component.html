@@ -1,0 +1,17 @@
+<header>
+    <h1>sistema da sua escola</h1>
+</header>
+<form>
+    <div>usuario:
+    <input type="text" name="cadUsuario" id="cadUsuario" [(ngModel)]="usuario">
+    </div>
+    <div>senha:
+    <input type="password" name="useSenha" id="useSenha" [(ngModel)]="senha" >
+    <input type="button" value="login" (click)="verificar()">
+    </div>
+    <div>crie o seu cadastro aqui:
+    <input type="button" value="fazer cadastro">
+    </div>
+</form>
+<footer>&copy;RenatoPirsFilhoDias</footer>
+
