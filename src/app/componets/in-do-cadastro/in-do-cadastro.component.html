@@ -5,25 +5,27 @@
     <form>
         <div>
             infome o seu nome completo:
-            <input type="text" name="nomeUser" id="">
+            <input type="text" name="nomeUser" id="" class="form-control">
             
         </div>
         <div>
-            infome o seu nome de usuario:
-            <input type="text" name="cadaDeUser" >
+            crie o seu nome de usuario:
+            <input type="text" name="cadaDeUser" class="form-control" >
         </div>
         <div>
             crie a sua senha:
-            <input type="password" name="test" id=""><br/>
+            <input type="password" name="test" id="" class="form-control"><br/>
             comfirme a sua senha:
-            <input type="password" name="test" id="">
+            <input type="password" name="test" id="" class="form-control">
         </div>
         <div>
             informe o que você é:<br/>
-            <input type="checkbox" name="" id="">professor<br/>
-            <input type="checkbox" name="" id="">aluno
+            <input type="radio" name="profi" id="prof" [checked]="false" [value]="cadProf">
+            <label for="prof">Professor</label><br/>
+            <input type="radio" name="profi" id="alun" [checked]="false" [value]="cadAlun">
+            <label for="alun">Aluno</label>
         </div>
-        <div><input type="button" value="cadastra" (click)="cadastrar()"></div>
+        <div><input type="button" value="cadastra" (click)="cadastrar()" class="btn btn-primary"></div>
     </form>
 </section><!--não esta pronto e nem funcinondo ainda -->
 
