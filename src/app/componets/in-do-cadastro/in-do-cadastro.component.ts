@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, NgModelGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgModelGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,17 +11,17 @@ import { FormControl, FormGroup, FormsModule, NgModelGroup, ReactiveFormsModule 
 export class InDoCadastroComponent {
   
   cadastro = new FormGroup({
-    nomeCompleto : new FormControl(''),
-    nomeUsuario : new FormControl(''),
-    senhaDoUsuario : new FormControl(''),
+    nomeCompleto : new FormControl('', Validators.required),
+    nomeUsuario : new FormControl('', Validators.required),
+    senhaDoUsuario : new FormControl('', Validators.required),
     confirmarSenha : new FormControl(''),
-    ocupacao : new FormControl('')
+    ocupacao : new FormControl('', Validators.required)
 
   })
   
   cadastrar(){
     
-   
+ 
 
 
 

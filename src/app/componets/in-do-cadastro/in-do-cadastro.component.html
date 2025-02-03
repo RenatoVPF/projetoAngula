@@ -4,21 +4,42 @@
 <section>
     <form [formGroup]="cadastro">
         <div>
+            @if (cadastro.get('nomeCompleto').hasError('required') && cadastro.get('nomeCompleto').touched) {
+                <p class="alert alert-warning">o campo nome completo é obrigatorio</p>
+            }
             infome o seu nome completo:
             <input type="text" formControlName="nomeCompleto" name="nomeUser" id="" class="form-control">
             
         </div>
         <div>
+            @if (cadastro.get('nomeUsuario').hasError('required') && cadastro.get('nomeUsuario').touched) {
+                <p class="alert alert-warning">o campo usuario é obrigatorio</p>
+            }
             crie o seu nome de usuario:
             <input type="text" formControlName="nomeUsuario" name="cadaDeUser" class="form-control" >
         </div>
         <div>
+            @if (cadastro.get('senhaDoUsuario').hasError('required') && cadastro.get('senhaDoUsuario').touched) {
+                <p class="alert alert-warning">o campo senha é obrigatorio</p>
+            }
+
             crie a sua senha:
-            <input type="password" formControlName="senhaDoUsuario" name="test" id="" class="form-control"><br/>
+            <input type="password" formControlName="senhaDoUsuario" name="test" id="" class="form-control">
+        </div>
+        <div>
+            @if (cadastro.value.confirmarSenha !== cadastro.value.senhaDoUsuario && cadastro.get('confirmarSenha').touched) {
+                <p class="alert alert-warning">as senhas não são iguais</p>
+            }
             comfirme a sua senha:
             <input type="password" formControlName="confirmarSenha" name="test" id="" class="form-control">
         </div>
         <div>
+            @if (cadastro.get('ocupacao').hasError('required') && cadastro.get('ocupacao').touched) {
+                <p>o campo ocupação é obrigatorio</p>
+            }
+            @if(cadastro.value.ocupacao !== 'aluno' && cadastro.value.ocupacao !== 'professor' && cadastro.get('ocupacao').touched) {
+                <p class="alert alert-warning">ocupação invalida</p>
+            }
             informe a sua ocupação(aluno / professor):<br/>
             <input type="text" formControlName="ocupacao" name="ocup" class="form-control">
             
