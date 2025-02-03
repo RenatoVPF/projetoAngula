@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgModelGroup, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-in-do-cadastro',
@@ -8,19 +9,23 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   styleUrl: './in-do-cadastro.component.css'
 })
 export class InDoCadastroComponent {
-  Professor: any;
-  aluno: string ;
-  cadProf:boolean;
-  cadAlun:boolean;
+  
+  cadastro = new FormGroup({
+    nomeCompleto : new FormControl(''),
+    nomeUsuario : new FormControl(''),
+    senhaDoUsuario : new FormControl(''),
+    confirmarSenha : new FormControl(''),
+    ocupacao : new FormControl('')
+
+  })
+  
   cadastrar(){
-    if(this.cadProf == true && this.cadAlun == false){
-      this.aluno = 'não é um aluno, você é um professo'
-    }
+    
    
 
 
 
-    console.log(`cadastrado, to de brincs, so to testando essa bagaça e você ${this.aluno}`)
+    console.log(`cadastrado, to de brincs, so to testando essa bagaça e você ${this.cadastro.value.nomeCompleto}`)
   }
 
 }

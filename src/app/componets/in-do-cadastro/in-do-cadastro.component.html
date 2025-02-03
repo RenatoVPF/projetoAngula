@@ -2,30 +2,46 @@
     <h1>cadastre-se agora</h1>
 </header>
 <section>
-    <form>
+    <form [formGroup]="cadastro">
         <div>
             infome o seu nome completo:
-            <input type="text" name="nomeUser" id="" class="form-control">
+            <input type="text" formControlName="nomeCompleto" name="nomeUser" id="" class="form-control">
             
         </div>
         <div>
             crie o seu nome de usuario:
-            <input type="text" name="cadaDeUser" class="form-control" >
+            <input type="text" formControlName="nomeUsuario" name="cadaDeUser" class="form-control" >
         </div>
         <div>
             crie a sua senha:
-            <input type="password" name="test" id="" class="form-control"><br/>
+            <input type="password" formControlName="senhaDoUsuario" name="test" id="" class="form-control"><br/>
             comfirme a sua senha:
-            <input type="password" name="test" id="" class="form-control">
+            <input type="password" formControlName="confirmarSenha" name="test" id="" class="form-control">
         </div>
         <div>
-            informe o que você é:<br/>
-            <input type="radio" name="profi" id="prof" [checked]="false" [value]="cadProf">
+            informe a sua ocupação(aluno / professor):<br/>
+            <input type="text" formControlName="ocupacao" name="ocup" class="form-control">
+            
+            
+            
+            <!--<input type="radio" name="profi" id="prof" [checked]="false" [value]="cadProf">
             <label for="prof">Professor</label><br/>
             <input type="radio" name="profi" id="alun" [checked]="false" [value]="cadAlun">
-            <label for="alun">Aluno</label>
+            <label for="alun">Aluno</label> -->
         </div>
+        <!--<div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            selecione
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Professor</a></li>
+                <li><a class="dropdown-item" href="#">Aluno</a></li>
+     
+            </ul>
+            </div> -->
         <div><input type="button" value="cadastra" (click)="cadastrar()" class="btn btn-primary"></div>
     </form>
+    
+  
 </section><!--não esta pronto e nem funcinondo ainda -->
 
